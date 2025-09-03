@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.jerocaller'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // logback, slf4j 로그 라이브러리 추가.
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+    implementation 'ch.qos.logback:logback-core:1.5.18'
+    implementation 'ch.qos.logback:logback-classic:1.5.18'
+
+    // 롬복 추가
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+}
+
+test {
+    useJUnitPlatform()
+}
